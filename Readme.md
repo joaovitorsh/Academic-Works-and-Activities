@@ -1,6 +1,6 @@
 # Trabalhos e Exercícios Acadêmicos
 
-Alguns exercícios e trabalhos acadêmicos ao qual fiz durante o curso de Sistemas de Informação, ao qual acho relevante para outras pessoas que estão aprendendo.
+Alguns exercícios e trabalhos acadêmicos que fiz durante o curso de Sistemas de Informação, ao qual acho relevante para outras pessoas que estão aprendendo.
 
 
 # Academic Assignments and Exercises
