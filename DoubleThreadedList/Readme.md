@@ -44,3 +44,7 @@ The program should display to the user a menu with the options to:
 - Search a job (with options to search by code or by name)
 - Exit the Program
 
+## Autor/Author
+
+- [@eopereiraaa](https://github.com/eopereiraaa)
+
