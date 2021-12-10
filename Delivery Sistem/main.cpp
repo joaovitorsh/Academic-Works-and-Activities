@@ -4,6 +4,7 @@
 #include <math.h>
 #include "./src/linkedlist.hpp"
 #include "./src/stack.hpp"
+
 using namespace std;
 
 #define MAXTAM 10
@@ -14,11 +15,12 @@ typedef struct
 {
     string name; // char name[30]; <--- Troquei, ah vai dar problema demais kk
     int cod;
+    float value;
 } Product;
 
 typedef struct
 {
-    int cod;
+    int cod_order;
     LinkedList<Product> *products = create<Product>(); // int product[MAXTAM];
     float order_value;
     float distance;
@@ -39,7 +41,7 @@ int main()
     UINT CPAGE_DEFAULT = GetConsoleOutputCP();
     SetConsoleOutputCP(CPAGE_UTF8);
 
-    Stack<Order> *backpack = createS<Order>(MAX_DELIVERY); 
+    Stack<Order> *backpack = createS<Order>(MAX_DELIVERY);
 
     mount_menu();
     main_menu();
@@ -49,25 +51,36 @@ int main()
 
 void register_order()
 {
+    int cod;
+    char choose, option;
 
+    do{ 
     cout << "██████████████████████████████████████████████\n";
     cout << "██             REGISTRO DE PEDIDO           ██\n";
     cout << "██████████████████████████████████████████████\n\n";
 
-    cout << "Digite o codigo do produto: ";
-    int cod;
-    cin >> cod;
-    
-    
- // flw entao // flw 
-    //Procura codigo
-    for (int i = 0; i < MAXTAM; i++)
+    Order_List.cod_order+= 1;
+
+    do
     {
-        if()
-    }
-    
+        
+        Order_List.distance = 1 + (rand() % 25);
 
+        cout << "Digite o codigo do produto: ";
+        cin >> cod;
 
+        // Procura codigo
+        for (int i = 0; i < MAXTAM; i++)
+        {
+            if (cod == menu[i].cod)
+            {
+                Order_List.order_value =+ menu[i].value;
+                 // usar a função de inserir o produto no pedido na lista encadeada
+            }
+        }
+    } while (choose == 's' || choose == 'S');
+
+    } while (option == 's' || option == 'S');
 }
 
 void mount_menu()
@@ -91,6 +104,7 @@ void mount_menu()
     {
         menu[i].cod = 10 + (rand() % 100);
         menu[i].name = names[i];
+        menu[i].value = 30 + (rand() % 50); // adicionar um valor aleatório ao produto entre 30 a 50 reais.
     }
 }
 
@@ -142,10 +156,17 @@ void main_menu()
         cout << " \n    ██             7 - Sair                                   ██";
         cout << " \n    ████████████████████████████████████████████████████████████\n";
 
-        cout << "\n Digite o numero referente a sua opçao: ";
-        cin >> option;
         system("cls");
 
+        while ((cout << "\n Digite o numero referente a sua opçao: ") && !(cin >> option))
+        {
+            cout << "  \n        Digite uma opção válida.";
+            cin.clear();
+            cin.ignore();
+            Sleep(1000);
+            system("cls");
+            main_menu();
+        }
         switch (option)
         {
         case 1:
