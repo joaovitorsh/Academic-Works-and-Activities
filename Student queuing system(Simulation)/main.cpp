@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <string.h>
 #include "./src/queue.hpp"
 
 #define MAXTAM 50
@@ -20,8 +21,8 @@ void menu();
 using namespace std;
 
 void printStudent(Student s){
-    cout << "\n\nNome: " << s.name
-         << "\n RA: " << s.RA;
+    cout << "\nNome: " << s.name
+         << "\nRA: " << s.RA << endl;
 }
 
 
@@ -32,7 +33,6 @@ int main()
     SetConsoleOutputCP(CPAGE_UTF8);
 
     menu();
-    system("pause");
     return 0;
 }
 
@@ -61,7 +61,7 @@ void register_student()
 
             cout << "\nDeseja cadastrar outro funcionário?[s/n]  ";
             cin >> choose;
-        } while (choose == 's' || choose == 'S' || choose == 'sim' || choose == 'Sim');
+        } while (choose == 's' || choose == 'S' ); 
     }
     else
     {
@@ -89,13 +89,17 @@ void serve_student()
             cout << "██             ATENDER ALUNO                ██\n";
             cout << "██████████████████████████████████████████████\n\n";
 
-            dequeue(queue, &s); // n entendi como funciona essa função kkkk
+            dequeue(queue, &s);
 
             cout << "Aluno atendido com sucesso!\n\n";
 
             cout << "\nDeseja atender outro funcionário?[s/n]  ";
             cin >> choose;
-        } while (choose == 's' || choose == 'S' || choose == 'sim' || choose == 'Sim');
+            if((choose == 's' || choose=='S') && isEmpty(queue)){
+                cout << "Desculpe, mas a fila está vazia.";
+                break;
+            }
+        } while (choose == 's' || choose == 'S');
     }
     else
     {
@@ -133,8 +137,6 @@ void menu()
         cout << " \n    ██             4 - Sair                                   ██";
         cout << " \n    ████████████████████████████████████████████████████████████\n";
 
-        system("cls");
-
         while ((cout << "\n Digite o numero referente a sua opçao: ") && !(cin >> option))
         {
             cout << "  \n        Digite uma opção válida.";
@@ -157,12 +159,7 @@ void menu()
             display_queue();
             break;
 
-        case 4:
-            system("pause");
-            break;
-
         default:
-            system("pause");
             break;
         }
         system("pause");
