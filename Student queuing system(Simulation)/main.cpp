@@ -10,11 +10,7 @@ typedef struct Student
     char name[30];
 } Student;
 
-typedef struct TQueue
-{
-    Queue<Student> *queue = createQ<Student>(MAXTAM);
-    int amount = 0;
-} TQueue;
+Queue<Student> *queue = createQ<Student>(MAXTAM);
 
 void register_student();
 void serve_student();
@@ -22,6 +18,12 @@ void display_queue();
 void menu();
 
 using namespace std;
+
+void printStudent(Student s){
+    cout << "\n\nNome: " << s.name
+         << "\n RA: " << s.RA;
+}
+
 
 int main()
 {
@@ -37,10 +39,9 @@ int main()
 void register_student()
 {
     Student s;
-    TQueue q;
     char choose;
 
-    if (!isFull(q.queue))
+    if (!isFull(queue))
     {
         do
         {
@@ -54,9 +55,7 @@ void register_student()
             cout << "Número do RA: ";
             cin >> s.RA;
 
-            enqueue(q.queue, s);
-
-            q.amount++;
+            enqueue(queue, s);
 
             cout << "Aluno incluso na fila com sucesso!\n\n";
 
@@ -80,10 +79,9 @@ void register_student()
 void serve_student()
 {
     Student s;
-    TQueue q;
     char choose;
 
-    if (!isEmpty(q.queue))
+    if (!isEmpty(queue))
     {
         do
         {
@@ -91,9 +89,7 @@ void serve_student()
             cout << "██             ATENDER ALUNO                ██\n";
             cout << "██████████████████████████████████████████████\n\n";
 
-            dequeue(q.queue, s); // n entendi como funciona essa função kkkk
-
-            q.amount--;
+            dequeue(queue, &s); // n entendi como funciona essa função kkkk
 
             cout << "Aluno atendido com sucesso!\n\n";
 
@@ -117,13 +113,7 @@ void serve_student()
 
 void display_queue()
 {
-    TQueue q;
-    Student s;
-
-    while (!isEmpty(q.queue))
-    {
-        printQueue(q.queue, s); // n entendi como funciona essa função kkkk
-    }
+    printQueue(queue, printStudent); // n entendi como funciona essa função kkkk // Aqui eu passo um função como parametro
 }
 
 void menu()
