@@ -59,7 +59,7 @@ void register_student()
 
             cout << "Aluno incluso na fila com sucesso!\n\n";
 
-            cout << "\nDeseja cadastrar outro funcionário?[s/n]  ";
+            cout << "\nDeseja cadastrar outro aluno?[s/n]  ";
             cin >> choose;
         } while (choose == 's' || choose == 'S' ); 
     }
@@ -93,7 +93,7 @@ void serve_student()
 
             cout << "Aluno atendido com sucesso!\n\n";
 
-            cout << "\nDeseja atender outro funcionário?[s/n]  ";
+            cout << "\nDeseja atender outro aluno?[s/n]  ";
             cin >> choose;
             if((choose == 's' || choose=='S') && isEmpty(queue)){
                 cout << "Desculpe, mas a fila está vazia.";
