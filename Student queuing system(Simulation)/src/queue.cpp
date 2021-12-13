@@ -23,7 +23,7 @@ Queue<T> *createQ(int maxSize)
 template <typename T>
 bool isEmpty(Queue<T> *queue)
 {
-    return (queue->front == -1);
+    return (queue->size == 0);
 }
 
 template <typename T>
@@ -95,6 +95,9 @@ bool dequeue(Queue<T> *queue, T *item)
 template <typename T>
 void printQueue(Queue<T> *queue, void (*print)(T))
 {
+    if(isEmpty(queue)){
+        return;
+    }
     int i = queue->front;
     do
     {
