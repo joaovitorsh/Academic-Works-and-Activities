@@ -4,16 +4,16 @@
 #include <math.h>
 #include "./src/linkedlist.hpp"
 #include "./src/stack.hpp"
+#include "./src/dqueue.hpp"
 
 using namespace std;
 
 #define MAXTAM 10
 #define MAX_DELIVERY 7
-#define QTD_PRODS 5
 
 typedef struct
 {
-    string name; // char name[30]; <--- Troquei, ah vai dar problema demais kk
+    string name;
     int cod;
     float value;
 } Product;
@@ -21,13 +21,14 @@ typedef struct
 typedef struct
 {
     int cod_order;
-    LinkedList<Product> *products = create<Product>(); // int product[MAXTAM];
-    float order_value;
+    LinkedList<Product> *products = create<Product>();
+    float value;
     float distance;
 } Order;
 
-Product menu[MAXTAM]; // Cardapio
-Order Order_List;
+Product menu[MAXTAM];                                  // Cardapio
+DQueue<Order> *order_list = createDQueue<Order>();     // Fila de Pedidos
+Stack<Order> *backpack = createS<Order>(MAX_DELIVERY); // Mochila
 
 void register_order();
 
@@ -41,8 +42,6 @@ int main()
     UINT CPAGE_DEFAULT = GetConsoleOutputCP();
     SetConsoleOutputCP(CPAGE_UTF8);
 
-    Stack<Order> *backpack = createS<Order>(MAX_DELIVERY);
-
     mount_menu();
     main_menu();
     SetConsoleOutputCP(CPAGE_DEFAULT);
@@ -52,35 +51,48 @@ int main()
 void register_order()
 {
     int cod;
-    char choose, option;
+    char choose;
 
-    do{ 
     cout << "██████████████████████████████████████████████\n";
     cout << "██             REGISTRO DE PEDIDO           ██\n";
     cout << "██████████████████████████████████████████████\n\n";
 
-    Order_List.cod_order+= 1;
+    //order_list.cod_order += 1;
+    Order o;
+    o.cod_order = (order_list->size + 10);
 
     do
     {
-        
-        Order_List.distance = 1 + (rand() % 25);
-
         cout << "Digite o codigo do produto: ";
         cin >> cod;
 
-        // Procura codigo
+        // Procura codigo do produto
         for (int i = 0; i < MAXTAM; i++)
         {
             if (cod == menu[i].cod)
             {
-                Order_List.order_value =+ menu[i].value;
-                 // usar a função de inserir o produto no pedido na lista encadeada
+                // adiciona o produto encontrado à lista de produtos do pedido
+                insertItem<Product>(menu[i], o.products);
+                cout << "Produto foi inserido à lista de pedidos!";
+                break;
+            }
+            else if (i == (MAXTAM - 1))
+            {
+                cout << "Produto nao encontrado!";
             }
         }
-    } while (choose == 's' || choose == 'S');
 
-    } while (option == 's' || option == 'S');
+        cout << "\nDeseja inserir outro produto ao pedido?(S/N) ";
+        cin >> choose;
+    } while (choose == 's' || choose == 'S');
+    o.distance = 1 + (rand() % 25);
+    if(isEmptyL(o.products)){
+        cout << "Pedido não foi inserido à fila!";
+        return;
+    }
+    
+    //colocando na fila o pedido
+    cout << "Pedido " << (enqueueDQueue(order_list, o)?"":"nao " )<< "foi inserido à fila de pedidos!";
 }
 
 void mount_menu()
@@ -156,8 +168,6 @@ void main_menu()
         cout << " \n    ██             7 - Sair                                   ██";
         cout << " \n    ████████████████████████████████████████████████████████████\n";
 
-        system("cls");
-
         while ((cout << "\n Digite o numero referente a sua opçao: ") && !(cin >> option))
         {
             cout << "  \n        Digite uma opção válida.";
@@ -170,7 +180,7 @@ void main_menu()
         switch (option)
         {
         case 1:
-
+            register_order();
             break;
 
         case 2:
