@@ -22,7 +22,7 @@ typedef struct
 {
     int cod_order;
     LinkedList<Product> *products = create<Product>();
-    float value;
+    float value = 0;
     float distance;
 } Order;
 
@@ -57,7 +57,7 @@ void register_order()
     cout << "██             REGISTRO DE PEDIDO           ██\n";
     cout << "██████████████████████████████████████████████\n\n";
 
-    //order_list.cod_order += 1;
+    // order_list.cod_order += 1;
     Order o;
     o.cod_order = (order_list->size + 10);
 
@@ -74,12 +74,12 @@ void register_order()
                 // adiciona o produto encontrado à lista de produtos do pedido
                 insertItem<Product>(menu[i], o.products);
                 o.value += menu[i].value;
-                cout << "Produto foi inserido à lista de pedidos!";
+                cout << "/nProduto foi inserido à lista de pedidos!\n";
                 break;
             }
             else if (i == (MAXTAM - 1))
             {
-                cout << "Produto nao encontrado!";
+                cout << "Produto nao encontrado!\n";
             }
         }
 
@@ -89,25 +89,25 @@ void register_order()
     o.distance = 1 + (rand() % 25);
     if (isEmptyL(o.products))
     {
-        cout << "Pedido não foi inserido à fila!";
+        cout << "Pedido não foi inserido à fila!\n\n";
         return;
     }
 
-    //colocando na fila o pedido
-    cout << "Pedido " << (enqueueDQueue(order_list, o) ? "" : "nao ") << "foi inserido à fila de pedidos!";
+    // colocando na fila o pedido
+    cout << "\nPedido " << (enqueueDQueue(order_list, o) ? "" : "nao ") << "foi inserido à fila de pedidos!\n";
 }
 
 void printProduct(Product p)
 {
-    cout << "\n\tCodigo: " << p.cod << "\tNome: " << p.name << "\tPreco: " << p.value;
+    cout << "\n\tCódigo: " << p.cod << "\tNome: " << p.name << "\tPreço: R$" << p.value;
 }
 
 void printOrder(Order o)
 {
     cout << "\nPEDIDO: ";
-    cout << "\nCodigo: " << o.cod_order
-         << "\nValor Total: " << o.value
-         << "\nDistancia: " << o.distance
+    cout << "\nCódigo: " << o.cod_order
+         << "\nValor Total: R$" << o.value
+         << "\nDistância: " << o.distance
          << "\nProdutos: ";
     printList(o.products, printProduct);
     cout
@@ -116,6 +116,7 @@ void printOrder(Order o)
 
 void print_orders()
 {
+    system("cls");
     printDQueue(order_list, printOrder);
 }
 
@@ -140,13 +141,15 @@ void mount_menu()
     {
         menu[i].cod = 10 + i;
         menu[i].name = names[i];
-        menu[i].value = 30 + (rand() % 50); // adicionar um valor aleatório ao produto entre 30 a 50 reais.
+        menu[i].value = 30 + (rand() % 79); // adicionar um valor aleatório ao produto entre 30 a 50 reais.
     }
 }
 
 void print_menu_product()
 {
     const int cols = 3;
+
+    system("cls");
     for (int i = 0; i < ceil((double)MAXTAM / cols); i++)
     {
         cout << "\n-------------------------------------------------------------------------------------------------\n";
@@ -175,7 +178,7 @@ void print_menu_product()
             {
                 break;
             }
-            cout << "|  Preço: " << menu[cols * i + j].value << "\t\t\t";
+            cout << "|  Preço: R$" << menu[cols * i + j].value << "\t\t\t";
         }
     }
     cout << "\n-------------------------------------------------------------------------------------------------\n";
@@ -199,7 +202,7 @@ void consult_order()
     cout << "Nao foi encontrado este pedido!";
 }
 
-//TODO -> ha um problema nesta funcao
+// TODO -> ha um problema nesta funcao
 void print_delivery_list()
 { // Acho que essa funciona
 
@@ -238,7 +241,7 @@ void print_delivery_list()
         push(backpack, auxList[i]);
     }
 
-    //imprimir
+    // imprimir
 
     cout << "MOCHILA: \n";
     printStack(backpack, printOrder);
@@ -249,7 +252,7 @@ void post_delivery()
     Order o;
     if (!pop(backpack, &o))
     {
-        cout << "Não foi possivel lancar entrega!\n";
+        cout << "Não foi possivel lançar entrega!\n";
         return;
     }
     cout << "PEDIDO ENTREGUE: \n";

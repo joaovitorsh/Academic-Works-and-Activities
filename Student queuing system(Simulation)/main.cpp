@@ -20,11 +20,11 @@ void menu();
 
 using namespace std;
 
-void printStudent(Student s){
+void printStudent(Student s)
+{
     cout << "\nNome: " << s.name
          << "\nRA: " << s.RA << endl;
 }
-
 
 int main()
 {
@@ -61,7 +61,7 @@ void register_student()
 
             cout << "\nDeseja cadastrar outro aluno?[s/n]  ";
             cin >> choose;
-        } while (choose == 's' || choose == 'S' ); 
+        } while (choose == 's' || choose == 'S');
     }
     else
     {
@@ -95,7 +95,8 @@ void serve_student()
 
             cout << "\nDeseja atender outro aluno?[s/n]  ";
             cin >> choose;
-            if((choose == 's' || choose=='S') && isEmpty(queue)){
+            if ((choose == 's' || choose == 'S') && isEmpty(queue))
+            {
                 cout << "Desculpe, mas a fila está vazia.";
                 break;
             }
@@ -106,7 +107,7 @@ void serve_student()
         cout << "A fila está vazia, impossível atender mais alunos.";
     }
 
-    cout << "\nVoltando ao menu pricipal, aguarde";
+    cout << "\nVoltando ao menu principal, aguarde";
     for (int i = 0; i < 7; i++)
     {
         Sleep(300);
@@ -117,7 +118,7 @@ void serve_student()
 
 void display_queue()
 {
-    printQueue(queue, printStudent); // n entendi como funciona essa função kkkk // Aqui eu passo um função como parametro
+    printQueue(queue, printStudent);
 }
 
 void menu()
