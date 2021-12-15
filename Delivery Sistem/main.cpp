@@ -181,6 +181,24 @@ void print_menu_product()
     cout << "\n-------------------------------------------------------------------------------------------------\n";
 }
 
+void consult_order()
+{
+    cout << "Digite o codigo do pedido: ";
+    int cod;
+    cin >> cod;
+    NodeDQueue<Order> *node = order_list->front;
+    for (int i = 0; i < order_list->size; i++)
+    {
+        if (node->item.cod_order == cod)
+        {
+            printOrder(node->item);
+            return;
+        }
+        node = node->next;
+    }
+    cout << "Nao foi encontrado este pedido!";
+}
+
 //TODO -> ha um problema nesta funcao
 void print_delivery_list()
 { // Acho que essa funciona
@@ -218,7 +236,7 @@ void print_delivery_list()
     for (int i = 0; i < actual_size_bp; i++)
     {
         push(backpack, auxList[i]);
-    }  
+    }
 
     //imprimir
 
@@ -226,16 +244,17 @@ void print_delivery_list()
     printStack(backpack, printOrder);
 }
 
-void post_delivery(){
+void post_delivery()
+{
     Order o;
-    if(!pop(backpack, &o)){
+    if (!pop(backpack, &o))
+    {
         cout << "Não foi possivel lancar entrega!\n";
         return;
     }
     cout << "PEDIDO ENTREGUE: \n";
     printOrder(o);
 }
-
 
 void main_menu()
 {
@@ -281,7 +300,7 @@ void main_menu()
             break;
 
         case 4:
-
+            consult_order();
             break;
 
         case 5:
