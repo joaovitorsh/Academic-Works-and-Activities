@@ -38,7 +38,7 @@ void insertItem(T e, LinkedList<T> *list)
 }
 
 template <typename T>
-bool isEmpty(LinkedList<T> *list)
+bool isEmptyL(LinkedList<T> *list)
 {
     return (list->head == NULL);
 }
@@ -46,7 +46,7 @@ bool isEmpty(LinkedList<T> *list)
 template <typename T>
 Node<T> *searchItem(LinkedList<T> *list, int val, bool (*compare)(T, int))
 {
-    if (isEmpty(list))
+    if (isEmptyL(list))
     {
         return NULL;
     }

@@ -14,7 +14,7 @@ template <typename T>
 void insertItem(T e, LinkedList<T> *list);
 
 template <typename T>
-bool isEmpty(LinkedList<T> *list);
+bool isEmptyL(LinkedList<T> *list);
 
 template <typename T>
 Node<T> *searchItem(LinkedList<T> *list, int val, bool (*compare)(T, int));
