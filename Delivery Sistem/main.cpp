@@ -181,6 +181,7 @@ void print_menu_product()
     cout << "\n-------------------------------------------------------------------------------------------------\n";
 }
 
+//TODO -> ha um problema nesta funcao
 void print_delivery_list()
 { // Acho que essa funciona
 
@@ -224,6 +225,17 @@ void print_delivery_list()
     cout << "MOCHILA: \n";
     printStack(backpack, printOrder);
 }
+
+void post_delivery(){
+    Order o;
+    if(!pop(backpack, &o)){
+        cout << "Não foi possivel lancar entrega!\n";
+        return;
+    }
+    cout << "PEDIDO ENTREGUE: \n";
+    printOrder(o);
+}
+
 
 void main_menu()
 {
@@ -276,7 +288,7 @@ void main_menu()
             print_delivery_list();
             break;
         case 6:
-
+            post_delivery();
             break;
         default:
             break;
