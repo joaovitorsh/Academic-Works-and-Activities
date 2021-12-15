@@ -73,6 +73,7 @@ void register_order()
             {
                 // adiciona o produto encontrado à lista de produtos do pedido
                 insertItem<Product>(menu[i], o.products);
+                o.value += menu[i].value;
                 cout << "Produto foi inserido à lista de pedidos!";
                 break;
             }
@@ -86,13 +87,36 @@ void register_order()
         cin >> choose;
     } while (choose == 's' || choose == 'S');
     o.distance = 1 + (rand() % 25);
-    if(isEmptyL(o.products)){
+    if (isEmptyL(o.products))
+    {
         cout << "Pedido não foi inserido à fila!";
         return;
     }
-    
+
     //colocando na fila o pedido
-    cout << "Pedido " << (enqueueDQueue(order_list, o)?"":"nao " )<< "foi inserido à fila de pedidos!";
+    cout << "Pedido " << (enqueueDQueue(order_list, o) ? "" : "nao ") << "foi inserido à fila de pedidos!";
+}
+
+void printProduct(Product p)
+{
+    cout << "\n\tCodigo: " << p.cod << "\tNome: " << p.name  << "\tPreco: " << p.value;
+}
+
+void printOrder(Order o)
+{
+    cout << "\nPEDIDO: ";
+    cout << "\nCodigo: " << o.cod_order
+         << "\nValor Total: " << o.value
+         << "\nDistancia: " << o.distance
+         << "\nProdutos: ";
+    printList(o.products, printProduct);
+    cout
+        << endl;
+}
+
+void print_orders()
+{
+    printDQueue(order_list, printOrder);
 }
 
 void mount_menu()
@@ -114,7 +138,7 @@ void mount_menu()
 
     for (int i = 0; i < MAXTAM; i++)
     {
-        menu[i].cod = 10 + (rand() % 100);
+        menu[i].cod = 10 + i;
         menu[i].name = names[i];
         menu[i].value = 30 + (rand() % 50); // adicionar um valor aleatório ao produto entre 30 a 50 reais.
     }
@@ -143,6 +167,15 @@ void print_menu_product()
                 break;
             }
             cout << "|  Nome: " << menu[cols * i + j].name << "\t";
+        }
+        cout << endl;
+        for (int j = 0; j < cols; j++)
+        {
+            if (cols * i + j >= MAXTAM)
+            {
+                break;
+            }
+            cout << "|  Preço: " << menu[cols * i + j].value << "\t\t\t";
         }
     }
     cout << "\n-------------------------------------------------------------------------------------------------\n";
@@ -184,7 +217,7 @@ void main_menu()
             break;
 
         case 2:
-
+            print_orders();
             break;
 
         case 3:
