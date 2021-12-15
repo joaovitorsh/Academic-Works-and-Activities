@@ -99,7 +99,7 @@ void register_order()
 
 void printProduct(Product p)
 {
-    cout << "\n\tCodigo: " << p.cod << "\tNome: " << p.name  << "\tPreco: " << p.value;
+    cout << "\n\tCodigo: " << p.cod << "\tNome: " << p.name << "\tPreco: " << p.value;
 }
 
 void printOrder(Order o)
@@ -181,6 +181,50 @@ void print_menu_product()
     cout << "\n-------------------------------------------------------------------------------------------------\n";
 }
 
+void print_delivery_list()
+{ // Acho que essa funciona
+
+    // Pegar a qtd max que a mochila pode
+    Order auxList[MAX_DELIVERY];
+    Order o;
+    int actual_size_bp = 0;
+    for (int i = 0; i < MAX_DELIVERY; i++)
+    {
+        if (!dequeueDQueue(order_list, &o))
+        {
+            break;
+        }
+        auxList[i] = o;
+        actual_size_bp++;
+    }
+
+    // ordenar
+
+    for (int i = 0; i < actual_size_bp; i++)
+    {
+        for (int j = i; j < actual_size_bp; j++)
+        {
+            if (auxList[i].distance < auxList[j].distance)
+            {
+                o = auxList[i];
+                auxList[i] = auxList[j];
+                auxList[j] = o;
+            }
+        }
+    }
+    // colocar na mochila
+
+    for (int i = 0; i < actual_size_bp; i++)
+    {
+        push(backpack, auxList[i]);
+    }  
+
+    //imprimir
+
+    cout << "MOCHILA: \n";
+    printStack(backpack, printOrder);
+}
+
 void main_menu()
 {
     int option;
@@ -229,13 +273,12 @@ void main_menu()
             break;
 
         case 5:
-
+            print_delivery_list();
             break;
         case 6:
 
             break;
         default:
-            system("pause");
             break;
         }
         system("pause");
