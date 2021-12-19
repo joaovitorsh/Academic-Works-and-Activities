@@ -202,10 +202,9 @@ void consult_order()
     cout << "Nao foi encontrado este pedido!";
 }
 
-// TODO -> ha um problema nesta funcao
-void print_delivery_list()
-{ // Acho que essa funciona
 
+void print_delivery_list()
+{
     // Pegar a qtd max que a mochila pode
     Order auxList[MAX_DELIVERY];
     Order o;
