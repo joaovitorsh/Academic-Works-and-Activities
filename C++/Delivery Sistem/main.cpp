@@ -66,12 +66,12 @@ void register_order()
         cout << "Digite o codigo do produto: ";
         cin >> cod;
 
-        // Procura codigo do produto
+        // Search product code
         for (int i = 0; i < MAXTAM; i++)
         {
             if (cod == menu[i].cod)
             {
-                // adiciona o produto encontrado à lista de produtos do pedido
+                // Adds the found product to the list of products in the order
                 insertItem<Product>(menu[i], o.products);
                 o.value += menu[i].value;
                 cout << "/nProduto foi inserido à lista de pedidos!\n";
@@ -93,7 +93,7 @@ void register_order()
         return;
     }
 
-    // colocando na fila o pedido
+    // Queuing the order
     cout << "\nPedido " << (enqueueDQueue(order_list, o) ? "" : "nao ") << "foi inserido à fila de pedidos!\n";
 }
 
@@ -205,7 +205,7 @@ void consult_order()
 
 void print_delivery_list()
 {
-    // Pegar a qtd max que a mochila pode
+    // Take the maximum amount that the backpack can
     Order auxList[MAX_DELIVERY];
     Order o;
     int actual_size_bp = 0;
@@ -219,7 +219,7 @@ void print_delivery_list()
         actual_size_bp++;
     }
 
-    // ordenar
+    // Order
 
     for (int i = 0; i < actual_size_bp; i++)
     {
@@ -233,14 +233,14 @@ void print_delivery_list()
             }
         }
     }
-    // colocar na mochila
+    // Put in your backpack
 
     for (int i = 0; i < actual_size_bp; i++)
     {
         push(backpack, auxList[i]);
     }
 
-    // imprimir
+    // Print
 
     cout << "MOCHILA: \n";
     printStack(backpack, printOrder);

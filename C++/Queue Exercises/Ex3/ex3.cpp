@@ -1,11 +1,17 @@
 /*
-Para um dado n´umero inteiro n > 1, o menor inteiro d > 1 que divide n ´e chamado de fator primo.
+Pt-BR - Para um dado n´umero inteiro n > 1, o menor inteiro d > 1 que divide n ´e chamado de fator primo.
 E poss´ıvel determinar a fatora¸c˜ao prima de n achando-se o fator primo de substituindo n pelo ´
 quociente n / d, repetindo essa opera¸c˜ao at´e que n seja igual a 1. Utilizando um dos TADs vistos
 em sala (Lista, Pilha ou Fila) para auxili´a-lo na manipula¸c˜ao de dados, implemente uma fun¸c˜ao
 que compute a fatora¸c˜ao prima de um n´umero imprimindo os seus fatores em ordem crescente.
-Por exemplo, para n = 3960, dever´a ser impresso: 2 * 2 * 2 * 3 * 3 * 5 * 11. Justifique a escolha
-do TAD utilizado
+Por exemplo, para n = 3960, dever´a ser impresso: 2 * 2 * 2 * 3 * 3 * 5 * 11. 
+
+Eng - For a given integer number n > 1, the smallest integer d > 1 that divides n is called the prime factor.
+It is possible to determine the prime factor of n by finding the prime factor of replacing n by the quotient n / d.
+quotient n / d, repeating this operation until n equals 1. Using one of the TADs seen
+(List, Stack, or Queue) to assist you in data manipulation, implement a function
+that computes the prime factor of a number by printing its factors in ascending order.
+For example, for n = 3960, it should print: 2 * 2 * 2 * 2 * 3 * 3 * 5 * 11. 
 
 */
 #include <iostream>

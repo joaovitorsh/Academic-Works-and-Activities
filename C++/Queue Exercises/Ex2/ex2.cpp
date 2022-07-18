@@ -1,9 +1,15 @@
 /*
-Utilizando as TADs implementadas para Filas, acrescidas das fun¸c˜oes que julgar pertinente, 
+Pt-BR - Utilizando as TADs implementadas para Filas, acrescidas das fun¸c˜oes que julgar pertinente, 
 elabore um programa que divida uma determinada Fila de n Clientes (n ≤ MAXTAM) em duas filas.
 Considerando a estrutura da fila inicial e os dados atribu´ıdos (manualmente ou por sorteio), mova
 os(as) clientes gestantes e maiores de 60 anos para a nova fila chamada Fila Prioritaria. Mostre
 as duas filas.
+
+Eng - Using the TADs implemented for Queues, plus the functions you deem pertinent, 
+Write a program that divides a given Queue of n Clients (n ≤ MAXTAM) into two queues.
+Given the initial queue structure and the data assigned (manually or by lot), move
+the customers who are pregnant and over 60 years old to the new queue called Priority Queue. Show
+the two queues.
 */
 
 #include <iostream>

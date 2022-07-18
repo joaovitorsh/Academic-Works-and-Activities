@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// ----------------------------- Funções de criação e verificação da lista vazia -----------------------------
+// ----------------------------- Empty list creation and checking functions -----------------------------
 
 void CreateEmptyList(list_Type *list)
 {
@@ -20,7 +20,7 @@ bool EmptyListCheck(list_Type *list)
     return (list->first == list->last);
 }
 
-// ----------------------------- Funções de inserção na lista -----------------------------
+// ----------------------------- List Insertion Functions -----------------------------
 
 void InsertListFirst(list_Type *list, item_Type *item)
 {
@@ -67,7 +67,7 @@ void InsertLastList(list_Type *list, item_Type *item)
     list->last->previous = assist;
 }
 
-// ----------------------------- Funções de remoção na lista -----------------------------
+// ----------------------------- Removal Functions in the List -----------------------------
 
 void RemoveListFirst(list_Type *list, item_Type *item)
 {
@@ -137,7 +137,7 @@ void RemoveElementXbyId(list_Type *list, item_Type *item, int idEle)
     free(assist);
 }
 
-// ----------------------------- Funções de busca -----------------------------
+// ----------------------------- Search functions -----------------------------
 
 bool SearchElementXbyId(list_Type *list, item_Type *item, int idEle)
 {
@@ -282,7 +282,7 @@ void SearchByTitle(list_Type *list)
     }
 }
 
-// ----------------------------- Funções de listagem e impressão -----------------------------
+// ----------------------------- List and Print Functions -----------------------------
 
 void ListWorks(list_Type *list)
 {
@@ -460,7 +460,7 @@ void PrintList(list_Type *list)
     }
 }
 
-// ----------------------------- Funções de listagem, registro e remoção de trabalho -----------------------------
+// ----------------------------- Job listing, registration, and removal functions -----------------------------
 
 int RegisterWork(list_Type *list)
 {
@@ -577,7 +577,7 @@ void ListAllWorks(list_Type *list)
     system("cls");
 }
 
-// ----------------------------- Funções de menu -----------------------------
+// ----------------------------- Menu functions -----------------------------
 
 void Menu()
 {

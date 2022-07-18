@@ -1,7 +1,7 @@
 #ifndef LDE_H
 #define LDE_H
 
-// ----------------------------- Estruturas de dados -----------------------------
+// ----------------------------- Data Structures -----------------------------
 
 typedef struct item_Type
 {
@@ -26,24 +26,24 @@ typedef struct list_Type
     pointer last;
 } list_Type;
 
-// ----------------------------- Funções de criação e verificação da lista vazia -----------------------------
+// ----------------------------- Empty list creation and checking functions -----------------------------
 
 void CreateEmptyList(list_Type *list);
 bool EmptyListCheck(list_Type *list);
 
-// ----------------------------- Funções de inserção na lista ----------------------------- 
+// ----------------------------- List Insertion Functions ----------------------------- 
 
 void InsertListFirst(list_Type *list, item_Type *item);
 void InsertListAfterElement(list_Type *list, item_Type *item, int idEleX); // new
 void InsertLastList(list_Type *list, item_Type *item);
 
-// ----------------------------- Funções de remoção na lista -----------------------------
+// ----------------------------- Removal Functions in the List -----------------------------
 
 void RemoveListFirst(list_Type *list, item_Type *item); // new
 void RemoveLastList(list_Type *list, item_Type *item);
 void RemoveElementXbyId(list_Type *list, item_Type *item, int idEle); // new
 
-// ----------------------------- Funções de busca -----------------------------
+// ----------------------------- Search Functions -----------------------------
 
 bool SearchElementXbyId(list_Type *list, item_Type *item, int idEle);
 bool SearchElementXbyTitle(list_Type *list, item_Type *item, char title[]);
@@ -51,7 +51,7 @@ void SearchWork(list_Type *list);
 void SearchByCode(list_Type *list);
 void SearchByTitle(list_Type *list);
 
-// ----------------------------- Funções de listagem e impressão -----------------------------
+// ----------------------------- List and Print Functions -----------------------------
 
 void ListWorks(list_Type *list);
 void PrintFirstJob(list_Type *list);
@@ -59,14 +59,14 @@ void PrintNextJob(list_Type *list, element_Type *ptr);
 void PrintPreviousWork(list_Type *list, element_Type *ptr);
 void PrintList(list_Type *list);
 
-// ----------------------------- Funções de listagem, registro e remoção de trabalho -----------------------------
+// ----------------------------- Job listing, registration, and removal functions -----------------------------
 
 int RegisterWork(list_Type *list);
 int RemoveWork(list_Type *list);
 void RemoveByCode(list_Type *list);
 void ListAllWorks(list_Type *list);
 
-// ----------------------------- Funções de menu -----------------------------
+// ----------------------------- Menu functions -----------------------------
 
 void Menu();
 void MenuRemove();

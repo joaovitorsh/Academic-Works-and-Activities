@@ -64,7 +64,7 @@ void registerStaff(tLinked_list *Staff_List, tSequential_list Project_List)
     tProject p;
     int num;
     char option, choose;
-    srand(time(NULL)); // Faz com que gere um número aleatório baseado na hora do computador
+    srand(time(NULL)); // Makes it generate a random number based on the computer's time
 
     do
     {
@@ -409,7 +409,7 @@ void excludeStaff(tLinked_list *Staff_List)
             }
             while (x != NULL)
             {
-                if (verifyEmptyLinearList(Project_List) == 1) // Verificar se funcionário não possui projetos
+                if (verifyEmptyLinearList(Project_List) == 1) // Check if the employee has no projects
                 {
                     deleteStaff(x, Staff_List, &f);
                     cont++;
