@@ -1,15 +1,15 @@
 from linkedlist import LinkedList
 
 if __name__ == '__main__':
-    lista = LinkedList()
+    list = LinkedList()
 
-    lista.append(367)
-    lista.append(2)
-    lista.append(80)
+    list.append(367)
+    list.append(2)
+    list.append(80)
 
 
-    print("Lista:", lista)
-    print("Número no índice 2:", lista.get(2))
+    print("Lista:", list)
+    print("Número no índice 2:", list.get(2))
         
 
 

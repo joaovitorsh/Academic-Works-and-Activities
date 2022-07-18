@@ -18,12 +18,12 @@ class LinkedList:
         return self.__repr__()
 
     def __len__(self):
-        # retorna o tamanho da lista
+        # returns the size of the list
         return self._size
 
     def __getitem__(self, index):
-        # a = Lista[6] - Fazer busca na lista encadeada
-        # a = lista.get(6)
+        # a = list[6] - Searching through the linked list
+        # a = list.get(6)
         pointer = self._getnode(index)
         if pointer:
             return pointer.data
@@ -31,8 +31,8 @@ class LinkedList:
             raise IndexError("list index out of range")
 
     def __setitem__(self, index, value):
-        # lista[5] = 9
-        # lista.set(5, 9)
+        # list[5] = 9
+        # list.set(5, 9)
         pointer = self._getnode(index)
         if pointer:
             pointer.data = value
@@ -50,19 +50,19 @@ class LinkedList:
 
     def append(self, element):
         if self.head:
-            # inserção quando a lista já possui elementos
+            # insertion when the list has already elements
             pointer = self.head
             while pointer.next:
                 pointer = pointer.next
             pointer.next = Node(element)
         else:
-            # primeira inserção
+            # first insertion
             self.head = Node(element)
 
         self._size = self._size + 1
 
     def index(self, element):
-        # retorna o índice do elemento na lista
+        # returns the index of the element in the list
         pointer = self.head
         i = 0
         while pointer:

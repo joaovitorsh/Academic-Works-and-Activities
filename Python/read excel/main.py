@@ -2,7 +2,7 @@ import pandas as pd
 
 import utils
 
-excel_file = pd.read_excel("/home/joao/Desktop/Sample_-_Superstore.xls")
+excel_file = pd.read_excel("Put here the location of the excel file")
 
 # print(excel_file)
 
