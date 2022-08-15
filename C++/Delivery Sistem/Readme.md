@@ -1,4 +1,4 @@
-# Português - BR:
+# 🇧🇷 :
 
 ## Exercício - Sistema de Delivery(Básico)
 
@@ -20,7 +20,7 @@ Faça  em  C/C++,  um  sistema  para  o  setor  de  delivery  de  uma  lanchonet
 - 6.)  Lançar Entrega:  Remova do topo da Mochila o pedido entregue.
 
 
-# English - US:
+# 🇺🇸 :
 
 ## Exercise - Delivery System(Basic)
 
@@ -44,5 +44,7 @@ Make in C/C++, a system for the delivery sector of a snack bar.   The system mus
 
 ## Autores/Authors
 
-- [@eopereiraaa](https://github.com/eopereiraaa)
-- [@souza-marcos](https://github.com/souza-marcos)
+[![@joaovitorsh](https://img.shields.io/badge/joaovitorsh-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/souza-marcos)
+[![@souza-marcos](https://img.shields.io/badge/souzamarcos-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/souza-marcos)
+
+
