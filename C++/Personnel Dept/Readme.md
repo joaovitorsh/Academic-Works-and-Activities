@@ -1,5 +1,5 @@
 
-# Português - BR:
+# 🇧🇷 :
 
 ## Exercício - Departamento Pessoal
 
@@ -24,7 +24,7 @@ Faça  em  C/C++,  um  sistema  para  o  departamento  pessoal  de  uma  empresa
 3 A empresa desconta 15% de imposto de renda sobre o salário bruto.
 
 
-# English - US:
+# 🇺🇸 :
 
 ## Exercise - Personnel Department
 
@@ -49,7 +49,7 @@ Make in C/C++, a system for the personnel department of a company.  The system m
 3 The company deducts 15% income tax from the gross wage.
 
 
-## Autor/Author
+## Autores/Authors
 
-- [@eopereiraaa](https://github.com/eopereiraaa)
+[![@joaovitorsh](https://img.shields.io/badge/joaovitorsh-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/joaovitorsh)
 
