@@ -1,4 +1,4 @@
-# Português - BR:
+# 🇧🇷 :
 
 ## Exercício - Filas
 
@@ -6,8 +6,11 @@
 
 Alguns exercícios de fila que fiz usando a biblioteca queue, e usando ponteiro.
 
+## ❗Obs:
 
-# English - US:
+Pode haver alguns erros
+
+# 🇺🇸 :
 
 ## Exercise - Queues
 
@@ -15,7 +18,10 @@ Alguns exercícios de fila que fiz usando a biblioteca queue, e usando ponteiro.
 
 Some queueing exercises I did using the queue library, and using pointers.
 
+## ❗Obs:
 
-## Autores/Authors
+There may be some errors
 
-- [@eopereiraaa](https://github.com/eopereiraaa)
+## Autor/Author
+
+[![@joaovitorsh](https://img.shields.io/badge/joaovitorsh-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/joaovitorsh)
