@@ -44,7 +44,7 @@ Make in C/C++, a system for the delivery sector of a snack bar.   The system mus
 
 ## Autores/Authors
 
-[![@joaovitorsh](https://img.shields.io/badge/joaovitorsh-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/souza-marcos)
+[![@joaovitorsh](https://img.shields.io/badge/joaovitorsh-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/joaovitorsh)
 [![@souza-marcos](https://img.shields.io/badge/souzamarcos-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/souza-marcos)
 
 
