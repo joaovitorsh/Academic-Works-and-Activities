@@ -1,4 +1,4 @@
-# Português - BR:
+# 🇧🇷 :
 
 ## Exercício - Lista Duplamente Encadeada
 
@@ -21,7 +21,7 @@ O programa deve exibir ao usuário um menu com as opções para:
 - Pesquisar um trabalho (com opções de pesquisar por código ou por nome)
 - Sair do Programa
 
-# English - US:
+# 🇺🇸 :
 
 ## Exercise - Double Threaded List
 
@@ -44,7 +44,7 @@ The program should display to the user a menu with the options to:
 - Search a job (with options to search by code or by name)
 - Exit the Program
 
-## Autor/Author
+## Autores/Authors
 
-- [@eopereiraaa](https://github.com/eopereiraaa)
+[![@joaovitorsh](https://img.shields.io/badge/joaovitorsh-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/joaovitorsh)
 
