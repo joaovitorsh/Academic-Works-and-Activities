@@ -1,4 +1,4 @@
-# Português - BR:
+# 🇧🇷 :
 
 ## Exercício - Sistema de fila de alunos(Simulação)
 
@@ -14,7 +14,7 @@ Faça em C/C++, um sistema para a simulação de uma fila de alunos.  O sistema 
 - 3.)  Exibe fila:  Imprima nesta opção toda a fila com a respectiva posição de cada aluno e seu RA.
 
 
-# English - US:
+# 🇺🇸 :
 
 ## Exercise - Student queuing system(Simulation)
 
@@ -32,5 +32,5 @@ Make in C/C++, a system to simulate a queue of students.  The system must have a
 
 ## Autores/Authors
 
-- [@eopereiraaa](https://github.com/eopereiraaa)
-- [@souza-marcos](https://github.com/souza-marcos)
+[![@joaovitorsh](https://img.shields.io/badge/joaovitorsh-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/joaovitorsh)
+[![@souza-marcos](https://img.shields.io/badge/souzamarcos-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/souza-marcos)
